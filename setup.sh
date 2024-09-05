@@ -14,11 +14,12 @@ export SVF_DIR
 echo "SVF_DIR=$SVF_DIR"
 
 function set_llvm {
+    echo $LLVM_DIR;
     # LLVM_DIR already set
-    [[ -n "$LLVM_DIR" ]] && return 0
+    # [[ -n "$LLVM_DIR" ]] && return 0
 
     # use local download directory
-    LLVM_DIR="$SVF_DIR/llvm-16.0.0.obj"
+    LLVM_DIR="$SVF_DIR/llvm-13.0.1.obj"
     [[ -d "$LLVM_DIR" ]] && return 0
 
     # ... otherwise don't set LLVM_DIR
@@ -35,8 +36,9 @@ fi
 
 
 function set_z3 {
+    echo $Z3_DIR;
     # Z3_DIR already set
-    [[ -n "$Z3_DIR" ]] && return 0
+    # [[ -n "$Z3_DIR" ]] && return 0
 
     # use local download directory
     Z3_DIR="$SVF_DIR/z3.obj"
